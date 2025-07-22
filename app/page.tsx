@@ -252,7 +252,10 @@ export default function HomePage() {
                     <div
                       className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${service.gradient} mb-4`}
                     >
-                      <service.icon className="h-6 w-6 text-white" />
+                      {(() => {
+                        const Icon = service.icon;
+                        return <Icon className="h-6 w-6 text-white" />;
+                      })()}
                     </div>
 
                     <h3 className="text-xl font-semibold mb-3">
@@ -324,7 +327,12 @@ export default function HomePage() {
                       className="flex items-start space-x-4"
                     >
                       <div className="flex-shrink-0 p-2 rounded-lg bg-brand-100 dark:bg-brand-900/20">
-                        <feature.icon className="h-5 w-5 text-brand-600" />
+                        {(() => {
+                          const FeatureIcon = feature.icon;
+                          return (
+                            <FeatureIcon className="h-5 w-5 text-brand-600" />
+                          );
+                        })()}
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">{feature.title}</h3>
