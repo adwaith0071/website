@@ -216,7 +216,10 @@ export default function ServicesPage() {
                   <div
                     className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${service.gradient} mb-6`}
                   >
-                    <service.icon className="h-8 w-8 text-white" />
+                    {(() => {
+                      const Icon = service.icon;
+                      return <Icon className="h-8 w-8 text-white" />;
+                    })()}
                   </div>
 
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -388,7 +391,12 @@ export default function ServicesPage() {
                 <Card className="glass-card border-0 h-full text-center">
                   <CardContent className="p-6">
                     <div className="inline-flex p-4 rounded-full bg-brand-100 dark:bg-brand-900/20 mb-4">
-                      <benefit.icon className="h-6 w-6 text-brand-600" />
+                      {(() => {
+                        const BenefitIcon = benefit.icon;
+                        return (
+                          <BenefitIcon className="h-6 w-6 text-brand-600" />
+                        );
+                      })()}
                     </div>
                     <h3 className="text-lg font-semibold mb-2">
                       {benefit.title}
